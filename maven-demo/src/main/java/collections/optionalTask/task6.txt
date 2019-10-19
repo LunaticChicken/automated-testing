@@ -1,0 +1,8 @@
+строка
+development
+java
+aa
+look
+класс
+программа
+boolean
