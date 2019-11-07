@@ -17,6 +17,7 @@ public class Abiturient { //id, Фамилия, Имя, Отчество, Адр
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
+        this.balls = balls;
         this.address = address;
         this.phoneNumber = phoneNumber;
     }

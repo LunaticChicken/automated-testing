@@ -1,6 +1,6 @@
 package fundamentals;
 
-public class MathOps {
+public class Task4 {
     public static void main(String[] args) {
         int sumResult = 0, multiplyResult = 1;
         for (int i = 0; i < args.length; i++) {

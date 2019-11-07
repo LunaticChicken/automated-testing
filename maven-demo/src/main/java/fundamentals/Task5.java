@@ -1,6 +1,6 @@
 package fundamentals;
 
-public class Months {
+public class Task5 {
     public static void main(String[] args) {
         switch (args[0]) {
             case "1": System.out.println("January"); break;

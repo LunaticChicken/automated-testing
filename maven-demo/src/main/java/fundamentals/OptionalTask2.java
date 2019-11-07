@@ -1,10 +1,11 @@
 package fundamentals;
 
 import java.util.Random;
-
-public class OptionalTask2 { //выполнены пункты 2 и 4
+//выполнены пункты 2 и 4
+public class OptionalTask2 {
     public static void main(String[] args) {
         int dimension = Integer.parseInt(args[0]);
+        System.out.println("Matrix " + dimension + "x" + dimension + ":");
         int[][] matrix = new int[dimension][dimension];
         Random random = new Random();
         for (int i = 0; i < dimension; i++) { //Заполнение матрицы
@@ -14,10 +15,9 @@ public class OptionalTask2 { //выполнены пункты 2 и 4
             }
             System.out.println();
         }
-
         System.out.println("The largest amount of increasing numbers = " + findLongestLengthOfIncreasingSequence(matrix));
-        System.out.println("\nMatrix without row and column with max value:");
-        deleteRowAndCol(matrix);
+        System.out.print("\nMatrix without column and row that contain the max value ");
+        showMatrixWithoutColumnAndRowThatContainMaxValue(matrix);
     }
 
     private static int findLongestLengthOfIncreasingSequence(int[][] matrix) {
@@ -40,8 +40,7 @@ public class OptionalTask2 { //выполнены пункты 2 и 4
         return longestLengthOfIncreasingSequence;
     }
 
-    private static void deleteRowAndCol(int[][] matrix) {
-        int[][] newMatrix = new int[matrix.length-1][matrix.length-1];
+    private static void showMatrixWithoutColumnAndRowThatContainMaxValue(int[][] matrix) {
         int maxNum = Integer.MIN_VALUE;
         int iMaxNum = 0, jMaxNum = 0;
         for (int i = 0; i < matrix.length; i++) { //Поиск наибольшего значения матрицы
@@ -53,14 +52,16 @@ public class OptionalTask2 { //выполнены пункты 2 и 4
                 }
             }
         }
-        System.out.println("(max value = " + maxNum + ")");
+        System.out.println("(max value == " + maxNum + "):");
+
         //Заполнение новой матрицы, удаление строки и столбца, содержащие максимальное значение (со сдвигом)
+        int[][] newMatrix = new int[matrix.length-1][matrix.length-1];
         int iNewMatrix = 0; //счётчик i для новой матрицы
         for (int i = 0; i < matrix.length; i++) {
+            if (i == iMaxNum) continue;
             int jNewMatrix = 0;
-            if (i == iMaxNum) continue; //если строка содержит максимальное значение, то мы её пропускаем
             for (int j = 0; j < matrix.length; j++) {
-                if (j == jMaxNum) continue; //если столбец содержит максимальное значение, то мы его пропускаем
+                if (j == jMaxNum) continue;
                 newMatrix[iNewMatrix][jNewMatrix] = matrix[i][j];
                 System.out.print(newMatrix[iNewMatrix][jNewMatrix] + " ");
                 jNewMatrix++;

@@ -1,15 +1,14 @@
 package fundamentals;
 
-public class RandomNumbers {
+public class Task3 {
     public static void main(String[] args) {
         int amountOfNumbers = Integer.parseInt(args[0]);
         System.out.println("Random numbers from 0 to 9:");
         for (int i = 0; i < amountOfNumbers; i++) {
-            if (i % 5 == 4) {
-                System.out.println((int)(Math.random()*10));
-            } else {
+            for (int j = 0; j < 4; j++) {
                 System.out.print((int)(Math.random()*10) + " ");
             }
+            System.out.println((int)(Math.random()*10));
         }
     }
 
