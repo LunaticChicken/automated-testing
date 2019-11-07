@@ -11,5 +11,4 @@ public class Task3 {
             System.out.println((int)(Math.random()*10));
         }
     }
-
 }
